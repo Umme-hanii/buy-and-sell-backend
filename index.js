@@ -1,18 +1,13 @@
-import Hapi, { server } from '@hapi/hapi'
+import Hapi from '@hapi/hapi'
+import routes from './src/routes/index.js'
 
 const start = async() => {
   const server = Hapi.server({
-    port: 8000,
+    port: 8005,
     host: 'localhost'
   })
 
-  server.route({
-    method: 'GET',
-    path: '/hello',
-    handler: (req, h) => {
-      return 'Hello'
-    }
-  })
+  routes.forEach(route => server.route(route))
 
   await server.start()
   console.log(`Server running on ${server.info.uri}`)
