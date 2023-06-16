@@ -12,6 +12,7 @@
   "dependencies": {
     "@hapi/boom": "^10.0.1",
     "@hapi/hapi": "^21.3.2",
+    "mysql": "^2.18.1",
     "nodemon": "^2.0.22"
   },
   "type": "module"
